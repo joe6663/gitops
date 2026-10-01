@@ -1,6 +1,8 @@
 name: hello world
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
 jobs:
   say-hello-inline-bash:
     runs-on: ubuntu-24.04
