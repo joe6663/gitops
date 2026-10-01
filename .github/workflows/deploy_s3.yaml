@@ -21,6 +21,3 @@ jobs:
          # audience: sts.amazonaws.com
           aws-region: us-east-1
           role-to-assume: arn:aws:iam::899042279834:role/gitops_aws_access
-          aws-debug-log: true
-      
-  
