@@ -7,7 +7,7 @@ jobs:
       - name: check out code
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 #v7.0.1
       - name: aws login
-        uses: actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd # v6.3.0
+        uses: aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd # v6.3.0
         with:
           audience: sts.amazonaws.com.cn
           aws-region: us-east-1
