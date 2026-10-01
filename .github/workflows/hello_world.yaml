@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - run: |
-          echo "Hello from an ${{var.TEST}}"
+          echo "Hello from an ${{vars.TEST}}"
           echo "Hello from an inline bash script in a GitHub Action Workflow!"
   job2:
     runs-on: ubuntu-24.04
