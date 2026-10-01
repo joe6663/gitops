@@ -21,3 +21,9 @@ jobs:
          # audience: sts.amazonaws.c
           aws-region: us-east-1
           role-to-assume: arn:aws:iam::899042279834:role/gitops_aws_access
+      - name: install aws cli
+        run: |
+          curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+          unzip awscliv2.zip
+          sudo ./aws/install
+          aws --version
