@@ -9,7 +9,7 @@ jobs:
       - name: aws login
         uses: aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd # v6.3.0
         with:
-          audience: sts.amazonaws.com.cn
+          audience: sts.amazonaws.com
           aws-region: us-east-1
           role-to-assume: arn:aws:iam::899042279834:role/gitops_aws_access
       
