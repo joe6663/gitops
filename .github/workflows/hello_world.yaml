@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - feature/pr_1
 jobs:
   say-hello-inline-bash:
     runs-on: ubuntu-24.04
