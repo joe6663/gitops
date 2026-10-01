@@ -21,6 +21,8 @@ jobs:
          # audience: sts.amazonaws.c
           aws-region: us-east-1
           role-to-assume: arn:aws:iam::899042279834:role/gitops_aws_access
-      - name: install aws cli
+      - name: move index.html to s3
         run: |
-          aws configure
+          aws s3 sync ./ s3://gha-html-code/ \
+          --exclude "*" \
+          --include index.html
