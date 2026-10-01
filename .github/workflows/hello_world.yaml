@@ -6,6 +6,7 @@ on:
   pull_request:
     branches:
       - feature/pr_1
+      - main
 jobs:
   say-hello-inline-bash:
     runs-on: ubuntu-24.04
