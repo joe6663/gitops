@@ -1,0 +1,22 @@
+name: test_output
+on: 
+  workflow_dispatch:
+jobs:
+  build:
+    outputs:
+      version: ${{steps.image_version.outputs.version}}
+    runs-on: ubuntu-24.04
+    steps:
+       - name: set image_version
+         id : image_version
+         run: |
+           echo "version = v1.0.1" >> $GITHUB.OUTPUT
+  test:
+    needs: build
+    runs-on: ubuntu-24.04
+    steps:
+      - name: get image_version
+        run: |
+            echo "image version is ${{ needs.build.outputs.version }}" 
+      
+        
