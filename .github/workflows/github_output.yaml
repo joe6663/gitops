@@ -10,10 +10,10 @@ jobs:
        - name: set image_version
          id : image_version
          run: |
-           echo "version=v1.0.1" >> $GITHUB.OUTPUT
+           echo "version=v1.0.1" >> $GITHUB_OUTPUT
        - name: get version in steps
          run: |
-           echo "diff step ${{steps.image_version.output.version}}"
+           echo "diff step ${{steps.image_version.outputs.version}}"
       
   test:
     needs: build
