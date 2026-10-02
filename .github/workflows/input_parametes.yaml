@@ -2,6 +2,7 @@ name : test_input
 on : workflow_dispatch # input must be manual trigger
 jobs:
   test_inputs:
+    runs-on: ubuntu-24.04
     inputs:
       env:
         description: env options
