@@ -1,5 +1,5 @@
 name: deploy_s3
-on: push
+on: workflow_dispatch
 jobs:
   deploy:
     runs-on : ubuntu-24.04
