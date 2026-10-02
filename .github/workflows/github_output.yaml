@@ -11,6 +11,11 @@ jobs:
          id : image_version
          run: |
            echo "version = v1.0.1" >> $GITHUB.OUTPUT
+    steps:
+      - name: get version in steps
+        run: |
+          echo "diff step ${{steps.image_version.output.version}}"
+      
   test:
     needs: build
     runs-on: ubuntu-24.04
