@@ -1,0 +1,12 @@
+name: set env var
+on: workflow_dispatch
+env:
+  ENV_VAR : "dev"
+
+jobs:
+  set env:
+  runs-on : ubuntu-24-04
+  steps : 
+    - name: display env var
+      run: |
+        echo "the env variable is $ ENV_VAR"
