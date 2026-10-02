@@ -1,0 +1,15 @@
+name : build and deploy
+on:
+  pull_request:
+    types: 
+      - opened
+      - synchronize
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Build job intro
+        run: |
+          echo "Inside build job"
