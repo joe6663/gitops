@@ -1,0 +1,26 @@
+name: test_output
+on: 
+  workflow_dispatch:
+jobs:
+  build:
+    outputs:         # outputs is nessary for output call in jobs outside
+      version: ${{steps.image_version.outputs.version}}
+    runs-on: ubuntu-24.04
+    steps:
+       - name: set image_version
+         id : image_version
+         run: |
+           echo "version=v1.0.1" >> $GITHUB_OUTPUT
+       - name: get version in steps
+         run: |
+           echo "diff step ${{steps.image_version.outputs.version}}"
+      
+  test:
+    needs: build
+    runs-on: ubuntu-24.04
+    steps:
+      - name: get image_version
+        run: |
+            echo "image version is ${{ needs.build.outputs.version }}" 
+      
+        
