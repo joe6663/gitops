@@ -1,17 +1,17 @@
 name : test_input
 on : workflow_dispatch # input must be manual trigger
+  inputs:
+    env:
+      description: env options
+      default: dev
+      type: choice
+      options:
+       - dev
+       - test
+       - prod
 jobs:
   test_inputs:
     runs-on: ubuntu-24.04
-    inputs:
-      env:
-        description: env options
-        default: dev
-        type: choice
-        options:
-          - dev
-          - test
-          - prod
     steps:
       - name: echo_inputs
         run: |
