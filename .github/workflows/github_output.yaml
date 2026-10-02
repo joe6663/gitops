@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
 jobs:
   build:
-    outputs:
+    outputs:         # outputs is nessary for output call in jobs outside
       version: ${{steps.image_version.outputs.version}}
     runs-on: ubuntu-24.04
     steps:
