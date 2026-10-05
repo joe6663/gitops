@@ -17,7 +17,7 @@ jobs:
     steps:
       - name: Build job intro
         run: |
-          echo "Inside build job ${{github.event_name}}"
+          echo "Inside build job ${{github.event_name}},${{github.event.action}}"
   deploy:
     runs-on: ubuntu-24.04
     if: github.event_name == 'push'
